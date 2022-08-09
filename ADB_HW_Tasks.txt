@@ -19,3 +19,23 @@
 
  6. Скопировать логи приложения todolist на компьютер. ............................................... == adb logcat | findstr "com.android.todolist" > D:\Logstodolist\todo.log (через Cmd)
  7. Удалить приложение todolist с телефона через ADB ................................................. == adb uninstall com.android.todolist
+ 
+ 
+Дополнительные команды: 
+ Установить старую Андроид-систему, Андроид другого производителя
+adb restore /Users/Name/Android/name_app/backup/backup.ab 
+
+Создать образ из которого возможно установить (Бэк ап)
+adb backup -apk -shared -all – f  / Users…
+
+Перезагрузить девайс	
+adb reboot
+
+Проверить подкл-е
+adb	adb version
+
+Отправить файл на девайс
+adb push c:/(путь откуда)/имя_файла \sdcard\путь_куда..
+
+Отправить файл с девайса
+adb pull sdcard/путь_откуда/screen_ name_app.png \путь_куда
