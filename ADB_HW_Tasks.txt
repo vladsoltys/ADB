@@ -1,0 +1,21 @@
+Сценарий напишите в .txt файл.
+.txt сценарий и .log файл прииложения todolist выгружайте на GitHub.
+Ссылкку на гитхаб присылайте в лс.
+
+ 1. Отобразить подключённый девайс в консоли. ........................................................ == adb devices
+ 2. Вывести адрес приложения todolist в системе Android .............................................. == adb shell 'pm list packages -f | grep com.android.todolist'(через PowerShell)
+                                                                                                          adb shell pm list packages -f | findstr com.android.todolist(через Cmd)
+
+ 3. Установить .apk файл приложениия todolist на телефон с компьютера через  ADB ..................... == adb install -t D:\AVD\001_ToDoList-master\001_ToDoList-master\app\build\outputs\apk\debug\app-debug.apk
+
+ 4. Сделать скриншот запущенного приложения todolist и сразу скопировать на компьютер в одной команде. == adb exec-out screencap -p > todo.png (через Cmd)
+
+ 5. Вывести в консоль логи приложения todolist ....................................................... == 1. - adb shell(вход в режим shell)
+                                                                                                             - adb logcat | grep com.android.todolist 
+                                                                                                             - Ctrl+C(остановка считывания логов) 
+                                                                                                             - Ctrl+D(выход из режима shell)      (через PowerShell)
+                                                                                                          2. - adb logcat | findstr com.android.todolist
+                                                                                                             - Ctrl+C(остановка считывания логов) (через Сmd)   
+
+ 6. Скопировать логи приложения todolist на компьютер. ............................................... == adb logcat | findstr "com.android.todolist" > D:\Logstodolist\todo.log (через Cmd)
+ 7. Удалить приложение todolist с телефона через ADB ................................................. == adb uninstall com.android.todolist
